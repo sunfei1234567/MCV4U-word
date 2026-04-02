@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments - MCV4U Derivatives</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">∫</span>
+                <span class="logo-text">MCV4U <span class="logo-sub">Calculus</span></span>
+            </a>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Content</a>
+                    <div class="dropdown-content">
+                        <a href="limits.html">Limits & Continuity</a>
+                        <a href="differentiability.html">Differentiability</a>
+                        <a href="rules.html">Derivative Rules</a>
+                        <a href="applications.html">Applications</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="videos.html" class="nav-link">Videos</a></li>
+                <li class="nav-item"><a href="assignments.html" class="nav-link active">Assignments</a></li>
+                <li class="nav-item"><a href="quizzes.html" class="nav-link">Quizzes</a></li>
+                <li class="nav-item"><a href="final-exam.html" class="nav-link highlight">Final Exam</a></li>
+                <li class="nav-item"><a href="teachers.html" class="nav-link">Teachers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Assignments</h1>
+            <p>Practice problems covering all derivative topics with detailed solutions for self-assessment and mastery</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="assignment-list">
+                <div class="assignment-card" id="assignment1">
+                    <div class="assignment-number">1</div>
+                    <div class="assignment-content">
+                        <h3>Limits and Continuity</h3>
+                        <p>Evaluate limits using various techniques including direct substitution, factorization, rationalization, and the squeeze theorem.</p>
+                        <div class="assignment-topics">
+                            <span>Limits</span>
+                            <span>Continuity</span>
+                            <span>One-sided Limits</span>
+                            <span>Squeeze Theorem</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="toggleSolution('sol1')">View Solution</button>
+                </div>
+                <div class="solution-box" id="sol1" style="display:none;  ">Assignment 1 Solutions</h4>
+                    <p><strong>Question 1:</strong> Evaluate lim (x→2) (x² - 4)/(x - 2)</p>
+                    <div class="solution">
+                        <p>Factor: (x² - 4)/(x - 2) = (x+2)(x-2)/(x-2) = x + 2 (for x ≠ 2)</p>
+                        <p>lim (x→2) (x + 2) = 4</p>
+                        <p><strong>Answer: 4</strong></p>
+                    </div>
+                    <div class="solution" style="margin-top: 20px;">
+                        <p><strong>Question 2:</strong> Evaluate lim (x→0) sin(3x)/x</p>
+                        <p>Using the known limit lim (x→0) sin(x)/x = 1:</p>
+                        <p>lim (x→0) sin(3x)/x = lim (x→0) [sin(3x)/(3x)] × 3 = 1 × 3 = 3</p>
+                        <p><strong>Answer: 3</strong></p>
+                    </div>
+                    <div class="solution" style="margin-top: 20px;">
+                        <p><strong>Question 3:</strong> Determine if f(x) = {x² if x < 1; 2x - 1 if x ≥ 1} is continuous at x = 1</p>
+                        <p>f(1) = 2(1) - 1 = 1</p>
+                        <p>lim (x→1⁻) x² = 1, lim (x→1⁺) (2x - 1) = 1</p>
+                        <p>Since all three conditions are met, f is continuous at x = 1</p>
+                        <p><strong>Answer: Continuous</strong></p>
+                    </div>
+                </div>
+
+                <div class="assignment-card" id="assignment2">
+                    <div class="assignment-number">2</div>
+                    <div class="assignment-content">
+                        <h3>Derivative Definition and Differentiability</h3>
+                        <p>Find derivatives using the definition, determine differentiability, and analyze the relationship between continuity and differentiability.</p>
+                        <div class="assignment-topics">
+                            <span>Difference Quotient</span>
+                            <span>Differentiability</span>
+                            <span>Higher Derivatives</span>
+                            <span>Continuity Test</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="toggleSolution('sol2')">View Solution</button>
+                </div>
+                <div class="solution-box" id="sol2" style="display:none;  ">Assignment 2 Solutions</h4>
+                    <p><strong>Question 1:</strong> Find f'(x) if f(x) = 3x² + 2x - 5 using the definition</p>
+                    <div class="solution">
+                        <p>f'(x) = lim (h→0) [f(x+h) - f(x)]/h</p>
+                        <p>= lim (h→0) [3(x+h)² + 2(x+h) - 5 - (3x² + 2x - 5)]/h</p>
+                        <p>= lim (h→0) [3x² + 6xh + 3h² + 2x + 2h - 5 - 3x² - 2x + 5]/h</p>
+                        <p>= lim (h→0) [6xh + 3h² + 2h]/h = lim (h→0) (6x + 3h + 2) = 6x + 2</p>
+                        <p><strong>Answer: f'(x) = 6x + 2</strong></p>
+                    </div>
+                    <div class="solution" style="margin-top: 20px;">
+                        <p><strong>Question 2:</strong> Find the second derivative of f(x) = x⁴ - 3x²</p>
+                        <p>f'(x) = 4x³ - 6x</p>
+                        <p>f''(x) = 12x² - 6</p>
+                        <p><strong>Answer: f''(x) = 12x² - 6</strong></p>
+                    </div>
+                </div>
+
+                <div class="assignment-card" id="assignment3">
+                    <div class="assignment-number">3</div>
+                    <div class="assignment-content">
+                        <h3>Derivative Rules - Power, Product, Quotient</h3>
+                        <p>Master the three essential rules for differentiation: power rule, product rule, and quotient rule through comprehensive practice.</p>
+                        <div class="assignment-topics">
+                            <span>Power Rule</span>
+                            <span>Product Rule</span>
+                            <span>Quotient Rule</span>
+                            <span>Combined Rules</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="toggleSolution('sol3')">View Solution</button>
+                </div>
+                <div class="solution-box" id="sol3" style="display:none;  ">Assignment 3 Solutions</h4>
+                    <p><strong>Question 1:</strong> Differentiate f(x) = (2x³ + 1)(x² - 3x)</p>
+                    <div class="solution">
+                        <p>Using product rule: f'(x) = (2x³ + 1)'(x² - 3x) + (2x³ + 1)(x² - 3x)'</p>
+                        <p>= (6x²)(x² - 3x) + (2x³ + 1)(2x - 3)</p>
+                        <p>= 6x⁴ - 18x³ + 4x⁴ - 6x³ + 2x - 3</p>
+                        <p>= 10x⁴ - 24x³ + 2x - 3</p>
+                        <p><strong>Answer: 10x⁴ - 24x³ + 2x - 3</strong></p>
+                    </div>
+                    <div class="solution" style="margin-top: 20px;">
+                        <p><strong>Question 2:</strong> Differentiate f(x) = (x² + 4)/(3x - 1)</p>
+                        <p>Using quotient rule: f'(x) = [(2x)(3x-1) - (x²+4)(3)]/(3x-1)²</p>
+                        <p>= [6x² - 2x - 3x² - 12]/(3x-1)²</p>
+                        <p>= [3x² - 2x - 12]/(3x-1)²</p>
+                        <p><strong>Answer: (3x² - 2x - 12)/(3x-1)²</strong></p>
+                    </div>
+                </div>
+
+                <div class="assignment-card" id="assignment4">
+                    <div class="assignment-number">4</div>
+                    <div class="assignment-content">
+                        <h3>Chain Rule and Trigonometric Derivatives</h3>
+                        <p>Practice differentiating composite functions and trigonometric expressions using the chain rule and derivative formulas.</p>
+                        <div class="assignment-topics">
+                            <span>Chain Rule</span>
+                            <span>Trig Derivatives</span>
+                            <span>Nested Functions</span>
+                            <span>Product + Chain</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="toggleSolution('sol4')">View Solution</button>
+                </div>
+                <div class="solution-box" id="sol4" style="display:none;  ">Assignment 4 Solutions</h4>
+                    <p><strong>Question 1:</strong> Find the derivative of f(x) = sin(5x² + 2x)</p>
+                    <div class="solution">
+                        <p>Using chain rule: f'(x) = cos(5x² + 2x) × d/dx(5x² + 2x)</p>
+                        <p>= cos(5x² + 2x) × (10x + 2)</p>
+                        <p><strong>Answer: (10x + 2)cos(5x² + 2x)</strong></p>
+                    </div>
+                    <div class="solution" style="margin-top: 20px;">
+                        <p><strong>Question 2:</strong> Differentiate f(x) = (tan(x))⁴</p>
+                        <p>Using chain rule: f'(x) = 4(tan(x))³ × sec²(x)</p>
+                        <p><strong>Answer: 4tan³(x)sec²(x)</strong></p>
+                    </div>
+                </div>
+
+                <div class="assignment-card" id="assignment5">
+                    <div class="assignment-number">5</div>
+                    <div class="assignment-content">
+                        <h3>Applications - Related Rates and Optimization</h3>
+                        <p>Solve real-world problems involving related rates and optimization, including geometry, physics, and economics applications.</p>
+                        <div class="assignment-topics">
+                            <span>Related Rates</span>
+                            <span>Optimization</span>
+                            <span>Physics</span>
+                            <span>Economics</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="toggleSolution('sol5')">View Solution</button>
+                </div>
+                <div class="solution-box" id="sol5" style="display:none;  ">Assignment 5 Solutions</h4>
+                    <p><strong>Question 1 (Related Rates):</strong> A ladder 13m long leans against a wall. If the bottom slides away at 5 m/s, how fast is the top sliding down when the bottom is 5m from the wall?</p>
+                    <div class="solution">
+                        <p>x² + y² = 169 (Pythagorean theorem)</p>
+                        <p>When x = 5: y = √(169-25) = √144 = 12m</p>
+                        <p>Differentiate: 2x(dx/dt) + 2y(dy/dt) = 0</p>
+                        <p>2(5)(5) + 2(12)(dy/dt) = 0</p>
+                        <p>50 + 24(dy/dt) = 0</p>
+                        <p>dy/dt = -50/24 = -25/12 m/s</p>
+                        <p><strong>Answer: -25/12 m/s (≈ -2.08 m/s)</strong></p>
+                    </div>
+                    <div class="solution" style="margin-top: 20px;">
+                        <p><strong>Question 2 (Optimization):</strong> Find the maximum area of a rectangle with perimeter 40cm.</p>
+                        <p>2x + 2y = 40 → x + y = 20 → y = 20 - x</p>
+                        <p>A = xy = x(20-x) = 20x - x²</p>
+                        <p>A'(x) = 20 - 2x = 0 → x = 10cm</p>
+                        <p>y = 20 - 10 = 10cm</p>
+                        <p>Maximum area = 10 × 10 = 100 cm²</p>
+                        <p><strong>Answer: 100 cm² (when rectangle is a square)</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">∫</span>
+                    <span>MCV4U Derivatives Project</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="limits.html">Limits</a>
+                    <a href="rules.html">Rules</a>
+                    <a href="assignments.html">Assignments</a>
+                    <a href="quizzes.html">Quizzes</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>MCV4U Calculus - B-Derivatives CCT Project</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function toggleSolution(id) {
+            const sol = document.getElementById(id);
+            sol.style.display = sol.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

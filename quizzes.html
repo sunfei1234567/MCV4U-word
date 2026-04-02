@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quizzes - MCV4U Derivatives</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">∫</span>
+                <span class="logo-text">MCV4U <span class="logo-sub">Calculus</span></span>
+            </a>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Content</a>
+                    <div class="dropdown-content">
+                        <a href="limits.html">Limits & Continuity</a>
+                        <a href="differentiability.html">Differentiability</a>
+                        <a href="rules.html">Derivative Rules</a>
+                        <a href="applications.html">Applications</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="videos.html" class="nav-link">Videos</a></li>
+                <li class="nav-item"><a href="assignments.html" class="nav-link">Assignments</a></li>
+                <li class="nav-item"><a href="quizzes.html" class="nav-link active">Quizzes</a></li>
+                <li class="nav-item"><a href="final-exam.html" class="nav-link highlight">Final Exam</a></li>
+                <li class="nav-item"><a href="teachers.html" class="nav-link">Teachers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Interactive Quizzes</h1>
+            <p>Test your understanding with engaging quiz formats covering Knowledge, Application, Thinking, and
+                Communication dimensions</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Assessment Center</span>
+                <h2 class="section-title">Choose Your Challenge</h2>
+                <p class="section-desc">Three unique quiz formats to test different skills</p>
+            </div>
+
+            <div class="quiz-grid">
+                <div class="quiz-card" onclick="startQuiz('knowledge')">
+                    <div class="katc-icon"
+                        style="width: 60px; height: 60px; background: #6366f1; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 20px;">
+                        K</div>
+                    <h3>Knowledge Quiz</h3>
+                    <p>Test your understanding of fundamental derivative concepts, definitions, theorems, and rules.</p>
+                    <div class="quiz-badge">Multiple Choice</div>
+                    <div style="margin-top: 20px; color: var(--gray); font-size: 0.85rem;">
+                        <p>✓ Limit definitions</p>
+                        <p>✓ Derivative rules</p>
+                        <p>✓ Theorem recall</p>
+                    </div>
+                </div>
+
+                <div class="quiz-card" onclick="startQuiz('application')">
+                    <div class="katc-icon"
+                        style="width: 60px; height: 60px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 20px;">
+                        A</div>
+                    <h3>Application Quiz</h3>
+                    <p>Apply derivative concepts to solve problems involving real-world scenarios and calculations.</p>
+                    <div class="quiz-badge">Problem Solving</div>
+                    <div style="margin-top: 20px; color: var(--gray); font-size: 0.85rem;">
+                        <p>✓ Related rates</p>
+                        <p>✓ Optimization</p>
+                        <p>✓ Motion problems</p>
+                    </div>
+                </div>
+
+                <div class="quiz-card" onclick="startQuiz('game')">
+                    <div class="katc-icon"
+                        style="width: 60px; height: 60px; background: #f59e0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 20px;">
+                        T</div>
+                    <h3>Derivative Game</h3>
+                    <p>Challenge yourself with a matching game to reinforce derivative rules and their applications.</p>
+                    <div class="quiz-badge">Interactive Game</div>
+                    <div style="margin-top: 20px; color: var(--gray); font-size: 0.85rem;">
+                        <p>✓ Match rules</p>
+                        <p>✓ Speed challenge</p>
+                        <p>✓ Pattern recognition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="quizContainer" style="display: none;">
+        <div class="container">
+            <div class="quiz-container">
+                <div id="quizContent"></div>
+                <div style="margin-top: 30px; display: flex; justify-content: space-between; align-items: center;">
+                    <button class="btn btn-secondary" onclick="prevQuestion()">Previous</button>
+                    <div id="quizProgress" style="color: var(--gray);"></div>
+                    <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Next</button>
+                </div>
+                <div id="quizResults" style="display: none; text-align: center; padding: 40px;">
+                    <h2 style="font-size: 2rem; margin-bottom: 20px;">Quiz Complete!</h2>
+                    <div style="font-size: 3rem; font-weight: 700; color: var(--primary); margin-bottom: 20px;"
+                        id="scoreDisplay"></div>
+                    <p id="scoreMessage" style="color: var(--gray); margin-bottom: 30px;"></p>
+                    <button class="btn btn-primary" onclick="resetQuiz()">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="gameContainer" style="display: none;">
+        <div class="container">
+            <div class="game-container">
+                <div class="game-header">
+                    <h2>Match the Derivative Rule!</h2>
+                    <div class="game-score">Score: <span id="gameScore">0</span></div>
+                    <div class="game-timer">Time: <span id="gameTimer">60</span>s</div>
+                </div>
+                <div id="gameContent">
+                    <p style="text-align: center; margin-bottom: 20px; color: var(--gray);">Drag the correct derivative
+                        to match the function</p>
+                    <div id="functionDisplay"
+                        style="background: var(--dark); padding: 20px; border-radius: 12px; text-align: center; font-size: 1.5rem; margin-bottom: 20px;">
+                    </div>
+                    <div class="drop-zone" id="dropZone">
+                        <p style="color: var(--gray);">Drop derivative here</p>
+                    </div>
+                    <div class="drag-blocks" id="dragBlocks"></div>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn btn-secondary" onclick="resetGame()">Reset Game</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">∫</span>
+                    <span>MCV4U Derivatives Project</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="limits.html">Limits</a>
+                    <a href="rules.html">Rules</a>
+                    <a href="assignments.html">Assignments</a>
+                    <a href="quizzes.html">Quizzes</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>MCV4U Calculus - B-Derivatives CCT Project</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const quizData = {
+            knowledge: {
+                questions: [
+                    {
+                        q: "What is the definition of a derivative f'(x)?",
+                        options: [
+                            "lim (h→0) [f(x+h) - f(x)] / h",
+                            "lim (x→0) [f(x+h) - f(x)] / h",
+                            "lim (h→∞) [f(x+h) - f(x)] / h",
+                            "lim (h→0) [f(x) - f(h)] / x"
+                        ],
+                        correct: 0
+                    },
+                    {
+                        q: "If a function is differentiable at a point, what must be true?",
+                        options: [
+                            "The function must be continuous",
+                            "The function must have a hole",
+                            "The function must be constant",
+                            "The function must be increasing"
+                        ],
+                        correct: 0
+                    },
+                    {
+                        q: "What is d/dx[sin(x)]?",
+                        options: ["cos(x)", "-cos(x)", "sin(x)", "-sin(x)"],
+                        correct: 0
+                    },
+                    {
+                        q: "The limit lim (x→0) sin(x)/x equals:",
+                        options: ["1", "0", "∞", "Does not exist"],
+                        correct: 0
+                    },
+                    {
+                        q: "If f is continuous at x = a, is f differentiable at x = a?",
+                        options: [
+                            "Not necessarily",
+                            "Yes, always",
+                            "No, never",
+                            "Only if f is linear"
+                        ],
+                        correct: 0
+                    }
+                ]
+            },
+            application: {
+                questions: [
+                    {
+                        q: "A balloon has volume V = (4/3)πr³. If dV/dt = 100 and r = 5, what is dr/dt?",
+                        options: [
+                            "1/π",
+                            "100/(4π)",
+                            "1",
+                            "4/π"
+                        ],
+                        correct: 0
+                    },
+                    {
+                        q: "Find the maximum area of a rectangle with perimeter 40cm.",
+                        options: [
+                            "100 cm²",
+                            "80 cm²",
+                            "200 cm²",
+                            "160 cm²"
+                        ],
+                        correct: 0
+                    },
+                    {
+                        q: "If f(x) = x³ - 3x, find f'(1).",
+                        options: [
+                            "0",
+                            "3",
+                            "-3",
+                            "6"
+                        ],
+                        correct: 0
+                    },
+                    {
+                        q: "A ladder 10m long leans against a wall. Bottom slides at 2m/s. Find dy/dt when x=6m, y=8m.",
+                        options: [
+                            "-3/2 m/s",
+                            "3/2 m/s",
+                            "-5/4 m/s",
+                            "5/4 m/s"
+                        ],
+                        correct: 0
+                    },
+                    {
+                        q: "Find the point where f(x) = x² - 4x + 3 has a horizontal tangent.",
+                        options: [
+                            "x = 2",
+                            "x = 0",
+                            "x = 4",
+                            "x = -2"
+                        ],
+                        correct: 0
+                    }
+                ]
+            }
+        };
+
+        let currentQuiz = null;
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+        let gameScore = 0;
+        let gameTimer = null;
+        let timeLeft = 60;
+
+        function startQuiz(type) {
+            currentQuiz = type;
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quizContainer').style.display = 'block';
+            document.getElementById('gameContainer').style.display = 'none';
+            document.getElementById('quizResults').style.display = 'none';
+            document.getElementById('quizContent').style.display = 'block';
+            loadQuestion();
+            window.scrollTo(0, 400);
+        }
+
+        function loadQuestion() {
+            const quiz = quizData[currentQuiz];
+            const q = quiz.questions[currentQuestion];
+            const optionsHtml = q.options.map((opt, i) =>
+                `<div class="quiz-option" onclick="selectAnswer(${i})">${opt}</div>`
+            ).join('');
+
+            document.getElementById('quizContent').innerHTML = `
+                <div class="quiz-question">${currentQuestion + 1}. ${q.q}</div>
+                <div class="quiz-options">${optionsHtml}</div>
+            `;
+            document.getElementById('quizProgress').textContent =
+                `${currentQuestion + 1} / ${quiz.questions.length}`;
+            document.getElementById('nextBtn').textContent =
+                currentQuestion === quiz.questions.length - 1 ? 'Finish' : 'Next';
+            answered = false;
+        }
+
+        function selectAnswer(index) {
+            if (answered) return;
+            answered = true;
+
+            const q = quizData[currentQuiz].questions[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+
+            options.forEach((opt, i) => {
+                opt.onclick = null;
+                if (i === q.correct) {
+                    opt.classList.add('correct');
+                } else if (i === index && index !== q.correct) {
+                    opt.classList.add('incorrect');
+                }
+            });
+
+            if (index === q.correct) {
+                score++;
+            }
+        }
+
+        function nextQuestion() {
+            const quiz = quizData[currentQuiz];
+            if (currentQuestion < quiz.questions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quizContent').style.display = 'none';
+            document.getElementById('quizResults').style.display = 'block';
+            const percentage = Math.round((score / quizData[currentQuiz].questions.length) * 100);
+            document.getElementById('scoreDisplay').textContent = `${percentage}%`;
+            document.getElementById('scoreMessage').textContent =
+                percentage >= 80 ? "Excellent work!" :
+                    percentage >= 60 ? "Good job! Keep practicing." :
+                        "Review the material and try again.";
+        }
+
+        function resetQuiz() {
+            document.getElementById('quizContainer').style.display = 'none';
+            document.getElementById('gameContainer').style.display = 'none';
+        }
+
+        function startQuiz(type) {
+            currentQuiz = type;
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quizContainer').style.display = 'block';
+            document.getElementById('gameContainer').style.display = 'none';
+            document.getElementById('quizResults').style.display = 'none';
+            document.getElementById('quizContent').style.display = 'block';
+            loadQuestion();
+            window.scrollTo(0, 400);
+        }
+
+        const gameFunctions = [
+            { fn: "x²", deriv: "2x" },
+            { fn: "x³", deriv: "3x²" },
+            { fn: "sin(x)", deriv: "cos(x)" },
+            { fn: "eˣ", deriv: "eˣ" },
+            { fn: "ln(x)", deriv: "1/x" },
+            { fn: "cos(x)", deriv: "-sin(x)" },
+            { fn: "x⁴", deriv: "4x³" },
+            { fn: "tan(x)", deriv: "sec²(x)" }
+        ];
+
+        let currentGameFn = null;
+        let gameTimerInterval = null;
+
+        function startGame() {
+            document.getElementById('quizContainer').style.display = 'none';
+            document.getElementById('gameContainer').style.display = 'block';
+            gameScore = 0;
+            timeLeft = 60;
+            document.getElementById('gameScore').textContent = gameScore;
+            document.getElementById('gameTimer').textContent = timeLeft;
+            nextGameQuestion();
+
+            if (gameTimerInterval) clearInterval(gameTimerInterval);
+            gameTimerInterval = setInterval(() => {
+                timeLeft--;
+                document.getElementById('gameTimer').textContent = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(gameTimerInterval);
+                    alert('Time\'s up! Final score: ' + gameScore);
+                }
+            }, 1000);
+        }
+
+        function nextGameQuestion() {
+            const shuffled = [...gameFunctions].sort(() => Math.random() - 0.5);
+            currentGameFn = shuffled[0];
+
+            document.getElementById('functionDisplay').textContent = "f(x) = " + currentGameFn.fn;
+
+            const wrongAnswers = shuffled.slice(1, 4).map(s => s.deriv);
+            const allOptions = [currentGameFn.deriv, ...wrongAnswers].sort(() => Math.random() - 0.5);
+
+            document.getElementById('dragBlocks').innerHTML = allOptions.map(opt =>
+                `<div class="drag-block" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">${opt}</div>`
+            ).join('');
+
+            const dropZone = document.getElementById('dropZone');
+            dropZone.innerHTML = '<p style="color: var(--gray);">Drop derivative here</p>';
+            dropZone.ondrop = (e) => drop(e, currentGameFn.deriv);
+        }
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.textContent);
+        }
+
+        function drop(ev, correctAnswer) {
+            ev.preventDefault();
+            const answer = ev.dataTransfer.getData("text");
+            document.getElementById('dropZone').innerHTML = answer;
+
+            if (answer === correctAnswer) {
+                gameScore += 10;
+                document.getElementById('gameScore').textContent = gameScore;
+                setTimeout(() => {
+                    nextGameQuestion();
+                }, 500);
+            } else {
+                gameScore = Math.max(0, gameScore - 5);
+                document.getElementById('gameScore').textContent = gameScore;
+                setTimeout(() => {
+                    nextGameQuestion();
+                }, 1000);
+            }
+        }
+
+        function resetGame() {
+            if (gameTimerInterval) clearInterval(gameTimerInterval);
+            startGame();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.quiz-card')[2].onclick = startGame;
+        });
+    </script>
+</body>
+
+</html>

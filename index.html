@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCV4U - Calculus: Derivatives | Interactive Learning Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Mobile Optimizations for Index Page */
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 80vh;
+                padding: 100px 20px 60px;
+            }
+
+            .hero-content {
+                padding: 0 16px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+                margin-bottom: 16px;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                max-width: 100%;
+                margin-bottom: 24px;
+            }
+
+            .topics-section {
+                padding: 60px 0;
+            }
+
+            .section-header {
+                margin-bottom: 40px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .section-desc {
+                font-size: 0.95rem;
+            }
+
+            .topics-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .topic-card {
+                padding: 24px;
+            }
+
+            .topic-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+            }
+
+            .topic-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .topic-content p {
+                font-size: 0.85rem;
+            }
+
+            .topic-list {
+                gap: 6px;
+            }
+
+            .topic-list li {
+                font-size: 0.8rem;
+                padding: 4px 10px;
+            }
+
+            .katc-section {
+                padding: 60px 0;
+            }
+
+            .katc-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .katc-card {
+                padding: 24px;
+            }
+
+            .katc-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+            }
+
+            .katc-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .katc-card p {
+                font-size: 0.85rem;
+            }
+
+            .katc-topics li {
+                font-size: 0.8rem;
+            }
+
+            .resources-section {
+                padding: 60px 0;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .resource-card {
+                padding: 24px;
+            }
+
+            .resource-icon {
+                font-size: 2rem;
+            }
+
+            .resource-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .resource-card p {
+                font-size: 0.85rem;
+            }
+
+            .resource-meta {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .resource-meta span {
+                font-size: 0.75rem;
+            }
+
+            .footer {
+                padding: 40px 0 20px;
+            }
+
+            .footer-content {
+                gap: 24px;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px 20px;
+            }
+
+            .footer-links a {
+                font-size: 0.85rem;
+            }
+
+            .footer-bottom p {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .topic-card,
+            .katc-card,
+            .resource-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">∫</span>
+                <span class="logo-text">MCV4U <span class="logo-sub">Calculus</span></span>
+            </a>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link active">Content</a>
+                    <div class="dropdown-content">
+                        <a href="limits.html">Limits & Continuity</a>
+                        <a href="differentiability.html">Differentiability</a>
+                        <a href="rules.html">Derivative Rules</a>
+                        <a href="applications.html">Applications</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="videos.html" class="nav-link">Videos</a></li>
+                <li class="nav-item"><a href="assignments.html" class="nav-link">Assignments</a></li>
+                <li class="nav-item"><a href="quizzes.html" class="nav-link">Quizzes</a></li>
+                <li class="nav-item"><a href="final-exam.html" class="nav-link highlight">Final Exam</a></li>
+                <li class="nav-item"><a href="teachers.html" class="nav-link">Teachers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Derivatives</h1>
+            <p class="hero-subtitle">Master the art of rates of change through interactive learning, comprehensive
+                tutorials, and real-world applications</p>
+        </div>
+    </header>
+
+    <section id="start-learning" class="topics-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Core Content</span>
+                <h2 class="section-title">Explore Derivative Concepts</h2>
+                <p class="section-desc">Comprehensive coverage of all B-Derivatives syllabus requirements</p>
+            </div>
+            <div class="topics-grid">
+                <a href="limits.html" class="topic-card">
+                    <div class="topic-icon">lim</div>
+                    <div class="topic-content">
+                        <h3>Limits & Continuity</h3>
+                        <p>Understanding limits, limit existence theorem, and the relationship between continuity and
+                            differentiability</p>
+                        <ul class="topic-list">
+                            <li>Limit Definition</li>
+                            <li>Limit Existence</li>
+                            <li>Continuity</li>
+                        </ul>
+                    </div>
+                    <div class="topic-arrow">→</div>
+                </a>
+                <a href="differentiability.html" class="topic-card">
+                    <div class="topic-icon">dy/dx</div>
+                    <div class="topic-content">
+                        <h3>Differentiability</h3>
+                        <p>Master the derivative concept, differentiable functions, and the relationship between
+                            differentiability and continuity</p>
+                        <ul class="topic-list">
+                            <li>Derivative Definition</li>
+                            <li>Differentiability</li>
+                            <li>Higher Derivatives</li>
+                        </ul>
+                    </div>
+                    <div class="topic-arrow">→</div>
+                </a>
+                <a href="rules.html" class="topic-card">
+                    <div class="topic-icon">f'</div>
+                    <div class="topic-content">
+                        <h3>Derivative Rules</h3>
+                        <p>Power rule, product rule, quotient rule, and chain rule - essential tools for differentiation
+                        </p>
+                        <ul class="topic-list">
+                            <li>Power Rule</li>
+                            <li>Product & Quotient Rules</li>
+                            <li>Chain Rule</li>
+                        </ul>
+                    </div>
+                    <div class="topic-arrow">→</div>
+                </a>
+                <a href="applications.html" class="topic-card">
+                    <div class="topic-icon">∆</div>
+                    <div class="topic-content">
+                        <h3>Real-World Applications</h3>
+                        <p>Apply derivatives to solve practical problems in physics, economics, and optimization</p>
+                        <ul class="topic-list">
+                            <li>Related Rates</li>
+                            <li>Optimization</li>
+                            <li>Curve Sketching</li>
+                        </ul>
+                    </div>
+                    <div class="topic-arrow">→</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="katc-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Assessment Framework</span>
+                <h2 class="section-title">KATC Dimensions</h2>
+                <p class="section-desc">Our teaching and assessment covers all four dimensions</p>
+            </div>
+            <div class="katc-grid">
+                <div class="katc-card knowledge">
+                    <div class="katc-icon">K</div>
+                    <h3>Knowledge</h3>
+                    <p>Understanding fundamental concepts, definitions, theorems, and mathematical relationships</p>
+                    <ul class="katc-topics">
+                        <li>Limit definitions</li>
+                        <li>Derivative rules</li>
+                        <li>Theorems & proofs</li>
+                    </ul>
+                </div>
+                <div class="katc-card application">
+                    <div class="katc-icon">A</div>
+                    <h3>Application</h3>
+                    <p>Applying mathematical concepts to solve problems and interpret results in context</p>
+                    <ul class="katc-topics">
+                        <li>Problem solving</li>
+                        <li>Calculations</li>
+                        <li>Real-world scenarios</li>
+                    </ul>
+                </div>
+                <div class="katc-card thinking">
+                    <div class="katc-icon">T</div>
+                    <h3>Thinking</h3>
+                    <p>Developing mathematical reasoning, problem-solving strategies, and analytical skills</p>
+                    <ul class="katc-topics">
+                        <li>Proof construction</li>
+                        <li>Problem analysis</li>
+                        <li>Strategy development</li>
+                    </ul>
+                </div>
+                <div class="katc-card communication">
+                    <div class="katc-icon">C</div>
+                    <h3>Communication</h3>
+                    <p>Clearly expressing mathematical ideas, solutions, and reasoning in various formats</p>
+                    <ul class="katc-topics">
+                        <li>Solution clarity</li>
+                        <li>Notation usage</li>
+                        <li>Mathematical writing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resources-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Learning Materials</span>
+                <h2 class="section-title">Practice & Assess</h2>
+                <p class="section-desc">Reinforce your learning with assignments and quizzes</p>
+            </div>
+            <div class="resources-grid">
+                <a href="assignments.html" class="resource-card">
+                    <div class="resource-icon">📝</div>
+                    <h3>Assignments</h3>
+                    <p>5 comprehensive assignments covering all derivative topics with detailed solutions</p>
+                    <div class="resource-meta">
+                        <span class="resource-count">5 Assignments</span>
+                        <span class="resource-format">With Solutions</span>
+                    </div>
+                </a>
+                <a href="quizzes.html" class="resource-card">
+                    <div class="resource-icon">🎮</div>
+                    <h3>Interactive Quizzes</h3>
+                    <p>Engaging quiz formats including games and multiple-choice assessments</p>
+                    <div class="resource-meta">
+                        <span class="resource-count">3 Quizzes</span>
+                        <span class="resource-format">KATC Coverage</span>
+                    </div>
+                </a>
+                <a href="final-exam.html" class="resource-card featured">
+                    <div class="resource-icon">📋</div>
+                    <h3>Final Examination</h3>
+                    <p>Comprehensive final exam testing all KATC dimensions with complete solutions</p>
+                    <div class="resource-meta">
+                        <span class="resource-count">Full Exam</span>
+                        <span class="resource-format">KATC Complete</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">∫</span>
+                    <span>MCV4U Derivatives Project</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="limits.html">Limits</a>
+                    <a href="rules.html">Rules</a>
+                    <a href="assignments.html">Assignments</a>
+                    <a href="quizzes.html">Quizzes</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>MCV4U Calculus - B-Derivatives CCT Project | Team Collaboration</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function initHeroChart() {
+            const ctx = document.getElementById('functionChart');
+            if (!ctx) return;
+
+            const solidColor = 'rgba(99, 102, 241, 0.15)';
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: Array.from({ length: 50 }, (_, i) => (i - 25) / 5),
+                    datasets: [{
+                        label: 'f(x) = x²',
+                        data: Array.from({ length: 50 }, (_, i) => Math.pow((i - 25) / 5, 2)),
+                        borderColor: '#6366f1',
+                        backgroundColor: solidColor,
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 0,
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(255,255,255,0.1)' },
+                            ticks: { color: 'rgba(255,255,255,0.6)' }
+                        },
+                        y: {
+                            grid: { color: 'rgba(255,255,255,0.1)' },
+                            ticks: { color: 'rgba(255,255,255,0.6)' }
+                        }
+                    }
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', initHeroChart);
+    </script>
+</body>
+
+</html>

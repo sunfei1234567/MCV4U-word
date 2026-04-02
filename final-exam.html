@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Examination - MCV4U Derivatives</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">∫</span>
+                <span class="logo-text">MCV4U <span class="logo-sub">Calculus</span></span>
+            </a>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Content</a>
+                    <div class="dropdown-content">
+                        <a href="limits.html">Limits & Continuity</a>
+                        <a href="differentiability.html">Differentiability</a>
+                        <a href="rules.html">Derivative Rules</a>
+                        <a href="applications.html">Applications</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="videos.html" class="nav-link">Videos</a></li>
+                <li class="nav-item"><a href="assignments.html" class="nav-link">Assignments</a></li>
+                <li class="nav-item"><a href="quizzes.html" class="nav-link">Quizzes</a></li>
+                <li class="nav-item"><a href="final-exam.html" class="nav-link highlight active">Final Exam</a></li>
+                <li class="nav-item"><a href="teachers.html" class="nav-link">Teachers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="exam-header">
+                <h1>Final Examination</h1>
+                <p>Comprehensive assessment covering all KATC dimensions: Knowledge, Application, Thinking, and Communication</p>
+                <div class="katc-indicator">
+                    <span style="background: #6366f1;">K</span>
+                    <span style="background: #10b981;">A</span>
+                    <span style="background: #f59e0b;">T</span>
+                    <span style="background: #ec4899;">C</span>
+                </div>
+                <p style="margin-top: 16px; font-size: 0.9rem; color: var(--gray);">This exam tests all 4 KATC dimensions with complete solutions</p>
+            </div>
+
+            <div class="exam-section">
+                <h2>Section A: Knowledge (K)</h2>
+                <p style="color: var(--gray); margin-bottom: 24px;">Demonstrate understanding of fundamental concepts, definitions, and theorems</p>
+
+                <div class="exam-question">
+                    <h3>Question 1</h3>
+                    <p>State the formal definition of a derivative. Explain the difference between the derivative and the slope of a secant line.</p>
+                    <div class="solution-toggle" onclick="toggleSolution('sol-a1')">
+                        <strong>Show Solution</strong>
+                    </div>
+                    <div class="solution-content" id="sol-a1">
+                        <p><strong>Formal Definition of Derivative:</strong></p>
+                        <p style="margin: 12px 0;">The derivative of f(x) is defined as:</p>
+                        <div class="formula-box">
+                            <div class="formula">f'(x) = lim (h→0) [f(x + h) - f(x)] / h</div>
+                        </div>
+                        <p><strong>Difference between Derivative and Secant Slope:</strong></p>
+                        <p>• <strong>Secant line slope:</strong> m = [f(x₂) - f(x₁)] / (x₂ - x₁) - uses two distinct points</p>
+                        <p>• <strong>Derivative:</strong> f'(x) = lim (h→0) [f(x + h) - f(x)] / h - uses the limit as h approaches 0</p>
+                        <p>• The derivative is the <em>instantaneous</em> rate of change at a specific point</p>
+                        <p>• The secant slope is the <em>average</em> rate of change over an interval</p>
+                        <p>• When x₂ → x₁, the secant slope approaches the derivative</p>
+                    </div>
+                </div>
+
+                <div class="exam-question">
+                    <h3>Question 2</h3>
+                    <p>List and explain the three conditions required for a function to be continuous at a point x = a.</p>
+                    <div class="solution-toggle" onclick="toggleSolution('sol-a2')">
+                        <strong>Show Solution</strong>
+                    </div>
+                    <div class="solution-content" id="sol-a2">
+                        <p><strong>Three Conditions for Continuity at x = a:</strong></p>
+                        <p style="margin: 12px 0;">For f(x) to be continuous at x = a, ALL three conditions must be satisfied:</p>
+                        <p>1. <strong>f(a) is defined</strong> - The function must have a value at x = a (no hole or gap)</p>
+                        <p>2. <strong>lim (x→a) f(x) exists</strong> - The limit as x approaches a must exist (left limit = right limit)</p>
+                        <p>3. <strong>lim (x→a) f(x) = f(a)</strong> - The limit value must equal the function value at that point</p>
+                        <p style="margin-top: 12px;"><strong>Example:</strong> f(x) = x² at x = 2</p>
+                        <p>• f(2) = 4 (defined) ✓</p>
+                        <p>• lim (x→2) x² = 4 (exists) ✓</p>
+                        <p>• 4 = 4 (equal) ✓</p>
+                        <p>∴ f(x) = x² is continuous at x = 2</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exam-section">
+                <h2>Section B: Application (A)</h2>
+                <p style="color: var(--gray); margin-bottom: 24px;">Apply mathematical concepts to solve problems in context</p>
+
+                <div class="exam-question">
+                    <h3>Question 3 - Related Rates</h3>
+                    <p>A conical tank with height 10m and radius 3m is being filled with water at a rate of 2 m³/min. How fast is the water level rising when the water is 6m deep?</p>
+                    <div class="solution-toggle" onclick="toggleSolution('sol-b1')">
+                        <strong>Show Solution</strong>
+                    </div>
+                    <div class="solution-content" id="sol-b1">
+                        <p><strong>Given:</strong></p>
+                        <p>• dV/dt = 2 m³/min (filling rate)</p>
+                        <p>• H = 10m, R = 3m (tank dimensions)</p>
+                        <p>• h = 6m (water depth at instant)</p>
+                        <p><strong>Find:</strong> dh/dt when h = 6m</p>
+                        <p style="margin-top: 12px;"><strong>Step 1:</strong> Relate V and h using similar triangles</p>
+                        <p>R/H = r/h where r is water radius at height h</p>
+                        <p>3/10 = r/h → r = (3/10)h</p>
+                        <p style="margin-top: 12px;"><strong>Step 2:</strong> Volume of cone</p>
+                        <p>V = (1/3)πr²h = (1/3)π[(3/10)h]²h = (1/3)π(9/100)h³ = (3/100)πh³</p>
+                        <p style="margin-top: 12px;"><strong>Step 3:</strong> Differentiate with respect to t</p>
+                        <p>dV/dt = (9/100)πh² · dh/dt</p>
+                        <p style="margin-top: 12px;"><strong>Step 4:</strong> Solve for dh/dt</p>
+                        <p>2 = (9/100)π(6)² · dh/dt</p>
+                        <p>2 = (9/100)π(36) · dh/dt</p>
+                        <p>2 = (324/100)π · dh/dt</p>
+                        <p>dh/dt = 200/(324π) = 50/(81π) m/min</p>
+                        <p style="margin-top: 12px;"><strong>Answer:</strong> dh/dt = 50/(81π) ≈ 0.196 m/min</p>
+                    </div>
+                </div>
+
+                <div class="exam-question">
+                    <h3>Question 4 - Optimization</h3>
+                    <p>A rectangle field is to be enclosed on three sides by fencing, with one side along a river (no fencing needed). If 200m of fencing is available, find the dimensions that maximize the enclosed area.</p>
+                    <div class="solution-toggle" onclick="toggleSolution('sol-b2')">
+                        <strong>Show Solution</strong>
+                    </div>
+                    <div class="solution-content" id="sol-b2">
+                        <p><strong>Step 1:</strong> Define variables</p>
+                        <p>• Let x = width (two sides perpendicular to river)</p>
+                        <p>• Let y = length (side parallel to river)</p>
+                        <p>• Constraint: 2x + y = 200 → y = 200 - 2x</p>
+                        <p style="margin-top: 12px;"><strong>Step 2:</strong> Write objective function</p>
+                        <p>A = xy = x(200 - 2x) = 200x - 2x²</p>
+                        <p style="margin-top: 12px;"><strong>Step 3:</strong> Find critical points</p>
+                        <p>A'(x) = 200 - 4x = 0</p>
+                        <p>x = 50m</p>
+                        <p style="margin-top: 12px;"><strong>Step 4:</strong> Verify maximum</p>
+                        <p>A''(x) = -4 < 0 (concave down → maximum)</p>
+                        <p>y = 200 - 2(50) = 100m</p>
+                        <p style="margin-top: 12px;"><strong>Step 5:</strong> Calculate maximum area</p>
+                        <p>A = 50 × 100 = 5000 m²</p>
+                        <p style="margin-top: 12px;"><strong>Answer:</strong> Width = 50m (×2), Length = 100m, Maximum area = 5000 m²</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exam-section">
+                <h2>Section C: Thinking (T)</h2>
+                <p style="color: var(--gray); margin-bottom: 24px;">Develop mathematical reasoning, proofs, and problem-solving strategies</p>
+
+                <div class="exam-question">
+                    <h3>Question 5 - Proof</h3>
+                    <p>Prove that if a function f is differentiable at x = a, then f is continuous at x = a.</p>
+                    <div class="solution-toggle" onclick="toggleSolution('sol-c1')">
+                        <strong>Show Solution</strong>
+                    </div>
+                    <div class="solution-content" id="sol-c1">
+                        <p><strong>Proof:</strong></p>
+                        <p style="margin: 12px 0;"><strong>Given:</strong> f is differentiable at x = a (i.e., f'(a) exists)</p>
+                        <p><strong>To Prove:</strong> f is continuous at x = a (i.e., lim (x→a) f(x) = f(a))</p>
+                        <p style="margin-top: 16px;"><strong>Proof:</strong></p>
+                        <p>Since f is differentiable at x = a:</p>
+                        <p style="margin-left: 20px;">f'(a) = lim (h→0) [f(a + h) - f(a)] / h exists</p>
+                        <p style="margin-top: 12px;">Consider the identity:</p>
+                        <p style="margin-left: 20px;">f(a + h) - f(a) = [f(a + h) - f(a)] / h × h</p>
+                        <p style="margin-top: 12px;">Taking the limit as h → 0:</p>
+                        <p style="margin-left: 20px;">lim (h→0) [f(a + h) - f(a)] = lim (h→0) [f(a + h) - f(a)] / h × lim (h→0) h</p>
+                        <p style="margin-left: 20px;">= f'(a) × 0 = 0</p>
+                        <p style="margin-top: 12px;">Therefore:</p>
+                        <p style="margin-left: 20px;">lim (h→0) f(a + h) - f(a) = 0</p>
+                        <p style="margin-left: 20px;">lim (h→0) f(a + h) = f(a)</p>
+                        <p style="margin-top: 12px;">Which is equivalent to:</p>
+                        <p style="margin-left: 20px;">lim (x→a) f(x) = f(a)</p>
+                        <p style="margin-top: 12px;">∎ <strong>Q.E.D.</strong></p>
+                    </div>
+                </div>
+
+                <div class="exam-question">
+                    <h3>Question 6 - Strategy Analysis</h3>
+                    <p>For f(x) = x³ - 3x + 1, analyze the behavior completely including intervals of increase/decrease, local extrema, and inflection points. Explain your strategy for this analysis.</p>
+                    <div class="solution-toggle" onclick="toggleSolution('sol-c2')">
+                        <strong>Show Solution</strong>
+                    </div>
+                    <div class="solution-content" id="sol-c2">
+                        <p><strong>Strategy:</strong></p>
+                        <p>1. Find f'(x) to determine increasing/decreasing intervals</p>
+                        <p>2. Find critical points where f'(x) = 0 or undefined</p>
+                        <p>3. Use first derivative test to classify critical points</p>
+                        <p>4. Find f''(x) to determine concavity and inflection points</p>
+                        <p>5. Set f''(x) = 0 to find potential inflection points</p>
+                        <p style="margin-top: 20px;"><strong>Complete Analysis:</strong></p>
+                        <p><strong>Step 1:</strong> f'(x) = 3x² - 3 = 3(x² - 1) = 3(x-1)(x+1)</p>
+                        <p>Critical points: x = -1, x = 1</p>
+                        <p style="margin-top: 12px;"><strong>Step 2:</strong> Test intervals</p>
+                        <p>• x < -1: f'(x) > 0 (increasing)</p>
+                        <p>• -1 < x < 1: f'(x) < 0 (decreasing)</p>
+                        <p>• x > 1: f'(x) > 0 (increasing)</p>
+                        <p style="margin-top: 12px;"><strong>Step 3:</strong> Classify extrema</p>
+                        <p>• x = -1: local maximum (changes from ↑ to ↓)</p>
+                        <p>• x = 1: local minimum (changes from ↓ to ↑)</p>
+                        <p style="margin-top: 12px;"><strong>Step 4:</strong> f''(x) = 6x</p>
+                        <p>Set f''(x) = 0: 6x = 0 → x = 0</p>
+                        <p style="margin-top: 12px;"><strong>Step 5:</strong> Test concavity</p>
+                        <p>• x < 0: f''(x) < 0 (concave down)</p>
+                        <p>• x > 0: f''(x) > 0 (concave up)</p>
+                        <p>Inflection point at x = 0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exam-section">
+                <h2>Section D: Communication (C)</h2>
+                <p style="color: var(--gray); margin-bottom: 24px;">Clearly express mathematical ideas, solutions, and reasoning</p>
+
+                <div class="exam-question">
+                    <h3>Question 7 - Written Explanation</h3>
+                    <p>Explain the relationship between velocity and acceleration in calculus terms. Use a real-world example (such as a car braking) to illustrate how these concepts work together. Your explanation should demonstrate proper mathematical notation and clear reasoning.</p>
+                    <div class="solution-toggle" onclick="toggleSolution('sol-d1')">
+                        <strong>Show Solution</strong>
+                    </div>
+                    <div class="solution-content" id="sol-d1">
+                        <p><strong>Mathematical Relationship:</strong></p>
+                        <p>In calculus, motion along a line is described by position s(t). The instantaneous velocity v(t) is the first derivative of position:</p>
+                        <div class="formula-box">
+                            <div class="formula">v(t) = ds/dt</div>
+                        </div>
+                        <p>Acceleration a(t) is the first derivative of velocity (and second derivative of position):</p>
+                        <div class="formula-box">
+                            <div class="formula">a(t) = dv/dt = d²s/dt²</div>
+                        </div>
+                        <p style="margin-top: 20px;"><strong>Real-World Example: Car Braking</strong></p>
+                        <p>Consider a car traveling at 30 m/s (≈108 km/h) that begins braking with constant deceleration.</p>
+                        <p>• <strong>At t = 0:</strong> v(0) = 30 m/s, a(0) = -5 m/s² (negative indicates slowing down)</p>
+                        <p>• <strong>At t = 2s:</strong> v(2) = 30 + (-5)(2) = 20 m/s</p>
+                        <p>• <strong>At t = 6s:</strong> v(6) = 30 + (-5)(6) = 0 m/s (car stops)</p>
+                        <p style="margin-top: 12px;"><strong>Key Observations:</strong></p>
+                        <p>• Velocity decreases linearly while acceleration remains constant</p>
+                        <p>• When v(t) = 0 and a(t) < 0, the car has stopped but would continue accelerating negatively if the brake remained applied</p>
+                        <p>• The negative acceleration (deceleration) causes velocity to decrease toward zero</p>
+                        <p style="margin-top: 12px;"><strong>Connection to Derivatives:</strong></p>
+                        <p>The slope of the velocity-time graph equals acceleration. The area under the acceleration-time graph equals the change in velocity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; padding: 40px; background: var(--dark-2); border-radius: 16px; margin-top: 40px;">
+                <h2 style="margin-bottom: 16px;">End of Final Examination</h2>
+                <p style="color: var(--gray);">This examination covers all KATC dimensions as required by the MCV4U curriculum.</p>
+                <p style="color: var(--gray); margin-top: 8px;">Total Questions: 7 | Dimensions: Knowledge, Application, Thinking, Communication</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">∫</span>
+                    <span>MCV4U Derivatives Project</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="limits.html">Limits</a>
+                    <a href="rules.html">Rules</a>
+                    <a href="assignments.html">Assignments</a>
+                    <a href="quizzes.html">Quizzes</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>MCV4U Calculus - B-Derivatives CCT Project</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function toggleSolution(id) {
+            const sol = document.getElementById(id);
+            sol.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

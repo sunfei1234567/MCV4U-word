@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derivative Rules - MCV4U Derivatives</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">∫</span>
+                <span class="logo-text">MCV4U <span class="logo-sub">Calculus</span></span>
+            </a>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link active">Content</a>
+                    <div class="dropdown-content">
+                        <a href="limits.html">Limits & Continuity</a>
+                        <a href="differentiability.html">Differentiability</a>
+                        <a href="rules.html">Derivative Rules</a>
+                        <a href="applications.html">Applications</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="videos.html" class="nav-link">Videos</a></li>
+                <li class="nav-item"><a href="assignments.html" class="nav-link">Assignments</a></li>
+                <li class="nav-item"><a href="quizzes.html" class="nav-link">Quizzes</a></li>
+                <li class="nav-item"><a href="final-exam.html" class="nav-link highlight">Final Exam</a></li>
+                <li class="nav-item"><a href="teachers.html" class="nav-link">Teachers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Derivative Rules</h1>
+            <p>Essential differentiation techniques: Power Rule, Product Rule, Quotient Rule, and Chain Rule - the essential toolkit for derivatives</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="concept-block">
+                <h2>1. Power Rule</h2>
+                <p>The most fundamental rule for differentiating polynomial and power functions.</p>
+
+                <div class="formula-box">
+                    <div class="formula">d/dx [xⁿ] = nxⁿ⁻¹</div>
+                    <div class="formula-label">For any real number n</div>
+                </div>
+
+                <div class="step-box">
+                    <p><strong>Special Cases:</strong></p>
+                    <p>• d/dx [x] = 1 (when n = 1)</p>
+                    <p>• d/dx [constant] = 0</p>
+                    <p>• d/dx [√x] = d/dx [x^(1/2)] = (1/2)x^(-1/2) = 1/(2√x)</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 1: Power Rule Applications</h4>
+                    <p>Find the derivative of f(x) = 5x⁴ + 3x² - 2x + 7</p>
+                    <div class="solution">
+                        <p><strong>Solution:</strong></p>
+                        <p>f'(x) = 5 · 4x³ + 3 · 2x - 2 + 0</p>
+                        <p>= 20x³ + 6x - 2</p>
+                        <p><strong>∴ f'(x) = 20x³ + 6x - 2</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-block">
+                <h2>2. Product Rule</h2>
+                <p>When differentiating the product of two functions, use this rule.</p>
+
+                <div class="formula-box">
+                    <div class="formula">d/dx [f(x) · g(x)] = f'(x) · g(x) + f(x) · g'(x)</div>
+                    <div class="formula-label">"First times derivative of second, plus second times derivative of first"</div>
+                </div>
+
+                <div class="step-box">
+                    <p><strong>Memory Aid:</strong> (f · g)' = f' · g + f · g'</p>
+                    <p><strong>Alternative notation:</strong> (uv)' = u'v + uv'</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 2: Product Rule</h4>
+                    <p>Find the derivative of f(x) = (3x² + 1)(x³ - 2x)</p>
+                    <div class="solution">
+                        <p><strong>Solution:</strong></p>
+                        <p>Let u = (3x² + 1) and v = (x³ - 2x)</p>
+                        <p>u' = 6x and v' = 3x² - 2</p>
+                        <p>f'(x) = (6x)(x³ - 2x) + (3x² + 1)(3x² - 2)</p>
+                        <p>= 6x⁴ - 12x² + 9x⁴ - 6x² + 3x² - 2</p>
+                        <p>= 15x⁴ - 15x² - 2</p>
+                        <p><strong>∴ f'(x) = 15x⁴ - 15x² - 2</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-block">
+                <h2>3. Quotient Rule</h2>
+                <p>When differentiating a quotient of two functions, use this rule.</p>
+
+                <div class="formula-box">
+                    <div class="formula">d/dx [f(x)/g(x)] = [f'(x)·g(x) - f(x)·g'(x)] / [g(x)]²</div>
+                    <div class="formula-label">"Low d-high minus high d-low, over low squared"</div>
+                </div>
+
+                <div class="step-box">
+                    <p><strong>Memory Aid:</strong> (f/g)' = (f'g - fg')/g²</p>
+                    <p><strong>Alternative notation:</strong> (u/v)' = (u'v - uv')/v²</p>
+                </div>
+
+                <div class="note-box">
+                    <strong>⚠️ Common Mistake:</strong> Do NOT simply differentiate numerator and denominator separately. The quotient rule is required.
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 3: Quotient Rule</h4>
+                    <p>Find the derivative of f(x) = (2x² + 3)/(x - 1)</p>
+                    <div class="solution">
+                        <p><strong>Solution:</strong></p>
+                        <p>Let u = 2x² + 3, v = x - 1</p>
+                        <p>u' = 4x, v' = 1</p>
+                        <p>f'(x) = [(4x)(x - 1) - (2x² + 3)(1)] / (x - 1)²</p>
+                        <p>= [4x² - 4x - 2x² - 3] / (x - 1)²</p>
+                        <p>= [2x² - 4x - 3] / (x - 1)²</p>
+                        <p><strong>∴ f'(x) = (2x² - 4x - 3)/(x - 1)²</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-block">
+                <h2>4. Chain Rule</h2>
+                <p>When differentiating composite functions (functions of functions), use the chain rule.</p>
+
+                <div class="formula-box">
+                    <div class="formula">d/dx [f(g(x))] = f'(g(x)) · g'(x)</div>
+                    <div class="formula-label">"Outer derivative times inner derivative"</div>
+                </div>
+
+                <div class="step-box">
+                    <p><strong>Step-by-step process:</strong></p>
+                    <p>1. Identify the outer function f and inner function g</p>
+                    <p>2. Find f'(u) and g'(x)</p>
+                    <p>3. Multiply: f'(g(x)) · g'(x)</p>
+                    <p>4. Substitute back to original variable</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 4: Chain Rule</h4>
+                    <p>Find the derivative of f(x) = (3x² + 2)⁵</p>
+                    <div class="solution">
+                        <p><strong>Solution:</strong></p>
+                        <p>Outer function: f(u) = u⁵</p>
+                        <p>Inner function: u = g(x) = 3x² + 2</p>
+                        <p>f'(u) = 5u⁴, g'(x) = 6x</p>
+                        <p>f'(x) = 5(3x² + 2)⁴ · 6x</p>
+                        <p>= 30x(3x² + 2)⁴</p>
+                        <p><strong>∴ f'(x) = 30x(3x² + 2)⁴</strong></p>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 5: Chain Rule with Multiple Applications</h4>
+                    <p>Find the derivative of f(x) = sin(4x³)</p>
+                    <div class="solution">
+                        <p><strong>Solution:</strong></p>
+                        <p>Outer: sin(u), Inner: u = 4x³</p>
+                        <p>d/dx[sin(u)] = cos(u) · u'</p>
+                        <p>f'(x) = cos(4x³) · 12x²</p>
+                        <p><strong>∴ f'(x) = 12x²cos(4x³)</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-block">
+                <h2>5. Trigonometric Derivatives</h2>
+                <p>Essential derivatives for trigonometric functions.</p>
+
+                <div class="formula-box">
+                    <div class="formula">d/dx [sin(x)] = cos(x)</div>
+                    <div class="formula-label">Sine derivative</div>
+                </div>
+                <div class="formula-box">
+                    <div class="formula">d/dx [cos(x)] = -sin(x)</div>
+                    <div class="formula-label">Cosine derivative</div>
+                </div>
+                <div class="formula-box">
+                    <div class="formula">d/dx [tan(x)] = sec²(x)</div>
+                    <div class="formula-label">Tangent derivative</div>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 6: Trigonometric Derivatives</h4>
+                    <p>Find the derivative of f(x) = 3sin(x) - 2cos(x) + tan(x)</p>
+                    <div class="solution">
+                        <p><strong>Solution:</strong></p>
+                        <p>f'(x) = 3cos(x) - 2(-sin(x)) + sec²(x)</p>
+                        <p>= 3cos(x) + 2sin(x) + sec²(x)</p>
+                        <p><strong>∴ f'(x) = 3cos(x) + 2sin(x) + sec²(x)</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-block">
+                <h2>6. Exponential and Logarithmic Derivatives</h2>
+
+                <div class="formula-box">
+                    <div class="formula">d/dx [eˣ] = eˣ</div>
+                    <div class="formula-label">Natural exponential (e ≈ 2.71828)</div>
+                </div>
+                <div class="formula-box">
+                    <div class="formula">d/dx [aˣ] = aˣ · ln(a)</div>
+                    <div class="formula-label">General exponential</div>
+                </div>
+                <div class="formula-box">
+                    <div class="formula">d/dx [ln(x)] = 1/x</div>
+                    <div class="formula-label">Natural logarithm</div>
+                </div>
+                <div class="formula-box">
+                    <div class="formula">d/dx [logₐ(x)] = 1/(x · ln(a))</div>
+                    <div class="formula-label">General logarithm</div>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 7: Exponential and Logarithmic Derivatives</h4>
+                    <p>Find the derivative of f(x) = x² · eˣ · ln(x)</p>
+                    <div class="solution">
+                        <p><strong>Solution:</strong> This requires multiple rules (product rule + chain rule)</p>
+                        <p>This is a product of three functions: x², eˣ, and ln(x)</p>
+                        <p>Using extended product rule:</p>
+                        <p>f'(x) = (2x · eˣ · ln(x)) + (x² · eˣ · ln(x)) + (x² · eˣ · 1/x)</p>
+                        <p>= 2xeˣln(x) + x²eˣln(x) + xeˣ</p>
+                        <p>= eˣ[2xln(x) + x²ln(x) + x]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">∫</span>
+                    <span>MCV4U Derivatives Project</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="limits.html">Limits</a>
+                    <a href="rules.html">Rules</a>
+                    <a href="assignments.html">Assignments</a>
+                    <a href="quizzes.html">Quizzes</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>MCV4U Calculus - B-Derivatives CCT Project</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

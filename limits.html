@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limits & Continuity - MCV4U Derivatives</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">∫</span>
+                <span class="logo-text">MCV4U <span class="logo-sub">Calculus</span></span>
+            </a>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link active">Content</a>
+                    <div class="dropdown-content">
+                        <a href="limits.html">Limits & Continuity</a>
+                        <a href="differentiability.html">Differentiability</a>
+                        <a href="rules.html">Derivative Rules</a>
+                        <a href="applications.html">Applications</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="videos.html" class="nav-link">Videos</a></li>
+                <li class="nav-item"><a href="assignments.html" class="nav-link">Assignments</a></li>
+                <li class="nav-item"><a href="quizzes.html" class="nav-link">Quizzes</a></li>
+                <li class="nav-item"><a href="final-exam.html" class="nav-link highlight">Final Exam</a></li>
+                <li class="nav-item"><a href="teachers.html" class="nav-link">Teachers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Limits & Continuity</h1>
+            <p>Foundation of Calculus: Understanding limits, limit existence theorem, and the relationship between continuity and differentiability</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="concept-block">
+                <h2>1. Understanding Limits</h2>
+                <p>The concept of a limit is fundamental to calculus. It describes the behavior of a function as its input approaches a particular value.</p>
+
+                <div class="formula-box">
+                    <div class="formula">lim (x→a) f(x) = L</div>
+                    <div class="formula-label">"The limit of f(x) as x approaches a equals L"</div>
+                </div>
+
+                <p>Consider the function f(x) = (x² - 4)/(x - 2). Direct substitution at x = 2 gives 0/0, which is undefined. However, the limit exists because we can simplify and analyze the behavior as x approaches 2 from both sides.</p>
+
+                <div class="example-box">
+                    <h4>Example 1: Finding Limits by Simplification</h4>
+                    <p>Find: lim (x→2) (x² - 4)/(x - 2)</p>
+                    <div class="solution">
+                        <p><strong>Solution:</strong></p>
+                        <p>Step 1: Factor the numerator: x² - 4 = (x + 2)(x - 2)</p>
+                        <p>Step 2: Simplify: (x + 2)(x - 2)/(x - 2) = x + 2 (for x ≠ 2)</p>
+                        <p>Step 3: Evaluate the limit: lim (x→2) (x + 2) = 4</p>
+                        <p><strong>∴ The limit equals 4</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-block">
+                <h2>2. Limit Existence Theorem</h2>
+                <p>A limit exists if and only if the left-hand limit and right-hand limit are equal.</p>
+
+                <div class="formula-box">
+                    <div class="formula">lim (x→a) f(x) = L ⟺ lim (x→a⁻) f(x) = lim (x→a⁺) f(x) = L</div>
+                    <div class="formula-label">Left-hand limit must equal right-hand limit</div>
+                </div>
+
+                <div class="theorem-box">
+                    <h4>Key Theorem: Limits and Function Values</h4>
+                    <p>The existence of a limit does NOT depend on whether f(a) is defined. The function can be defined or undefined at x = a, but if the limit exists, it is still valid.</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 2: One-Sided Limits</h4>
+                    <p>Determine if the limit exists: f(x) = { x + 2 if x < 1; 3 - x if x ≥ 1 } at x = 1</p>
+                    <div class="solution">
+                        <p><strong>Solution:</strong></p>
+                        <p>Left-hand limit: lim (x→1⁻) f(x) = lim (x→1⁻) (x + 2) = 1 + 2 = 3</p>
+                        <p>Right-hand limit: lim (x→1⁺) f(x) = lim (x→1⁺) (3 - x) = 3 - 1 = 2</p>
+                        <p>Since 3 ≠ 2, <strong>the limit does NOT exist</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-block">
+                <h2>3. Continuity</h2>
+                <p>A function is continuous at a point x = a if three conditions are met:</p>
+
+                <div class="formula-box">
+                    <div class="formula">f(a) is defined ∧ lim (x→a) f(x) exists ∧ lim (x→a) f(x) = f(a)</div>
+                    <div class="formula-label">All three conditions must be satisfied</div>
+                </div>
+
+                <div class="step-box">
+                    <p><strong>Types of Discontinuities:</strong></p>
+                    <p>• <strong>Removable:</strong> Hole at the point (can be "filled")</p>
+                    <p>• <strong>Jump:</strong> Sudden change in value (left ≠ right)</p>
+                    <p>• <strong>Infinite:</strong> Vertical asymptote (function grows without bound)</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 3: Testing Continuity</h4>
+                    <p>Is f(x) = (x² - 9)/(x - 3) continuous at x = 3?</p>
+                    <div class="solution">
+                        <p><strong>Solution:</strong></p>
+                        <p>1. f(3) = (9 - 9)/0 = 0/0 = undefined ✗</p>
+                        <p>2. lim (x→3) (x² - 9)/(x - 3) = lim (x→3) (x + 3) = 6 (limit exists)</p>
+                        <p>Since f(3) is not defined, <strong>f is NOT continuous at x = 3</strong></p>
+                        <p>However, if we define g(x) = x + 3 (with g(3) = 6), then g IS continuous at x = 3</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-block">
+                <h2>4. Relationship: Continuity & Differentiability</h2>
+                <div class="theorem-box">
+                    <h4>Critical Theorem</h4>
+                    <p>If a function is differentiable at a point, then it must be continuous at that point. However, continuity does NOT guarantee differentiability.</p>
+                </div>
+
+                <div class="note-box">
+                    <strong>⚠️ Important:</strong> All differentiable functions are continuous, but not all continuous functions are differentiable. A classic example is f(x) = |x| at x = 0, which is continuous but not differentiable (the left and right derivatives don't match).
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 4: Continuity ≠ Differentiability</h4>
+                    <p>Show that f(x) = |x| is continuous at x = 0 but not differentiable there.</p>
+                    <div class="solution">
+                        <p><strong>Continuity:</strong></p>
+                        <p>• f(0) = |0| = 0 (defined)</p>
+                        <p>• lim (x→0) |x| = 0 (exists)</p>
+                        <p>• lim (x→0) |x| = f(0) = 0 ✓</p>
+                        <p><strong>∴ f is continuous at x = 0</strong></p>
+                        <p><strong>Differentiability:</strong></p>
+                        <p>• Left derivative: lim (h→0⁻) (|0 + h| - |0|)/h = lim (h→0⁻) (-h)/h = -1</p>
+                        <p>• Right derivative: lim (h→0⁺) (|0 + h| - |0|)/h = lim (h→0⁺) (h)/h = 1</p>
+                        <p>Since -1 ≠ 1, <strong>f is NOT differentiable at x = 0</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-block">
+                <h2>5. Special Limit Rules</h2>
+                <div class="formula-box">
+                    <div class="formula">lim (x→0) sin(x)/x = 1</div>
+                    <div class="formula-label">Squeeze Theorem corollary</div>
+                </div>
+                <div class="formula-box">
+                    <div class="formula">lim (x→0) (1 - cos(x))/x = 0</div>
+                    <div class="formula-label">Using trig identity</div>
+                </div>
+                <div class="formula-box">
+                    <div class="formula">lim (x→∞) (1 + 1/x)^x = e ≈ 2.71828</div>
+                    <div class="formula-label">Definition of e</div>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example 5: Trigonometric Limit</h4>
+                    <p>Find: lim (x→0) sin(3x)/x</p>
+                    <div class="solution">
+                        <p><strong>Solution:</strong></p>
+                        <p>Using substitution and the known limit:</p>
+                        <p>lim (x→0) sin(3x)/x = lim (x→0) [sin(3x)/(3x)] × 3</p>
+                        <p>= 1 × 3 = 3</p>
+                        <p><strong>∴ The limit equals 3</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">∫</span>
+                    <span>MCV4U Derivatives Project</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="limits.html">Limits</a>
+                    <a href="rules.html">Rules</a>
+                    <a href="assignments.html">Assignments</a>
+                    <a href="quizzes.html">Quizzes</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>MCV4U Calculus - B-Derivatives CCT Project</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
