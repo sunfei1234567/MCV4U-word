@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Tutorials - MCV4U Derivatives</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="nav-container">
@@ -40,7 +42,8 @@
     <section class="page-hero">
         <div class="container">
             <h1>Video Tutorials</h1>
-            <p>Learn derivatives through comprehensive video lessons with visual explanations and step-by-step examples</p>
+            <p>Learn derivatives through comprehensive video lessons with visual explanations and step-by-step examples
+            </p>
         </div>
     </section>
 
@@ -54,13 +57,17 @@
 
             <div class="video-grid">
                 <div class="video-card">
-                    <div class="video-placeholder">
-                        <div class="play-btn" onclick="alert('Video 1: Introduction to Derivatives would play here')"></div>
-                        <span class="video-duration">12:30</span>
+                    <div class="video-embed">
+                        <iframe width="100%" height="250"
+                            src="https://www.youtube.com/embed/HTamvFvAu7w?si=mfZxc8vMyak352Fc"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
-                        <h3>Video 1: Introduction to Derivatives</h3>
-                        <p>Understanding the concept of derivatives, limits review, and the derivative definition using difference quotients. Visual introduction to rates of change.</p>
+                        <h3>differentiability</h3>
+                        <p>Understanding the concept of derivatives, limits review, and the derivative definition using
+                            difference quotients. Visual introduction to rates of change.</p>
                         <ul class="topic-list" style="margin-top: 12px;">
                             <li>Limits Recap</li>
                             <li>Derivative Definition</li>
@@ -76,43 +83,12 @@
                     </div>
                     <div class="video-info">
                         <h3>Video 2: Mastering Derivative Rules</h3>
-                        <p>Complete coverage of Power Rule, Product Rule, Quotient Rule, and Chain Rule with numerous worked examples and practice tips.</p>
+                        <p>Complete coverage of Power Rule, Product Rule, Quotient Rule, and Chain Rule with numerous
+                            worked examples and practice tips.</p>
                         <ul class="topic-list" style="margin-top: 12px;">
                             <li>Power Rule</li>
                             <li>Product & Quotient Rules</li>
                             <li>Chain Rule</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-placeholder">
-                        <div class="play-btn" onclick="alert('Video 3: Applications of Derivatives would play here')"></div>
-                        <span class="video-duration">18:20</span>
-                    </div>
-                    <div class="video-info">
-                        <h3>Video 3: Real-World Applications</h3>
-                        <p>Related rates, optimization problems, and motion applications. Learn how derivatives solve practical problems in physics and economics.</p>
-                        <ul class="topic-list" style="margin-top: 12px;">
-                            <li>Related Rates</li>
-                            <li>Optimization</li>
-                            <li>Curve Sketching</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-placeholder">
-                        <div class="play-btn" onclick="alert('Video 4: Advanced Differentiation would play here')"></div>
-                        <span class="video-duration">14:15</span>
-                    </div>
-                    <div class="video-info">
-                        <h3>Video 4: Advanced Differentiation</h3>
-                        <p>Trigonometric derivatives, exponential and logarithmic differentiation, and implicit differentiation techniques.</p>
-                        <ul class="topic-list" style="margin-top: 12px;">
-                            <li>Trig Derivatives</li>
-                            <li>Exp & Log Functions</li>
-                            <li>Implicit Differentiation</li>
                         </ul>
                     </div>
                 </div>
@@ -132,22 +108,26 @@
                 <div class="resource-card">
                     <div class="resource-icon">📚</div>
                     <h3>Khan Academy</h3>
-                    <p>Free comprehensive video lessons and practice problems on derivatives and calculus fundamentals.</p>
-                    <a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1" target="_blank" class="btn btn-secondary" style="margin-top: 16px;">Visit Khan Academy</a>
+                    <p>Free comprehensive video lessons and practice problems on derivatives and calculus fundamentals.
+                    </p>
+                    <a href="https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1" target="_blank"
+                        class="btn btn-secondary" style="margin-top: 16px;">Visit Khan Academy</a>
                 </div>
 
                 <div class="resource-card">
                     <div class="resource-icon">🎓</div>
                     <h3>3Blue1Brown</h3>
                     <p>Visual, intuitive explanations of calculus concepts with beautiful animations.</p>
-                    <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr" target="_blank" class="btn btn-secondary" style="margin-top: 16px;">Watch 3Blue1Brown</a>
+                    <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr" target="_blank"
+                        class="btn btn-secondary" style="margin-top: 16px;">Watch 3Blue1Brown</a>
                 </div>
 
                 <div class="resource-card">
                     <div class="resource-icon">📖</div>
                     <h3>Paul's Online Notes</h3>
                     <p>Comprehensive calculus notes with detailed examples and practice problems.</p>
-                    <a href="https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx" target="_blank" class="btn btn-secondary" style="margin-top: 16px;">Visit Paul's Notes</a>
+                    <a href="https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx" target="_blank"
+                        class="btn btn-secondary" style="margin-top: 16px;">Visit Paul's Notes</a>
                 </div>
             </div>
         </div>
@@ -176,4 +156,5 @@
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
